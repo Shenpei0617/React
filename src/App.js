@@ -4,12 +4,14 @@
 //import { useState } from 'react'
 //import { examples } from './ex-1026/examples'
 
-import Menu from './練習題/1.選單項目/Menu'
+//import Menu from './練習題/1.選單項目/Menu'
+
+import Demo from './練習題/2.物件陣列處理練習/Demo'
 
 function App() {
   return (
     <>
-      <Menu />
+      <Demo />
     </>
   )
 }
