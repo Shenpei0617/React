@@ -9,6 +9,9 @@ function MultipleInput() {
     password: '',
   })
 
+  // true = 呈現密碼 / false = 隱藏密碼
+  const [show, setShow] = useState(false)
+
   const handleFieldChange = (e) => {
     //console.log(e.target.type, e.target.name, e.target.value)
     // computed property name
@@ -30,11 +33,20 @@ function MultipleInput() {
       <br />
       <label>密碼</label>
       <input
-        type="text"
+        type={show ? 'text' : 'password'}
         name="password"
         value={user.password}
         onChange={handleFieldChange}
       />
+      <input
+        type="checkbox"
+        name="show"
+        checked={show}
+        onChange={() => {
+          setShow(!show)
+        }}
+      />
+      <label>顯示密碼</label>
     </>
   )
 }
