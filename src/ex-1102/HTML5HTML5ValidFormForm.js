@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function HTML5Form() {
+function HTML5HTML5ValidFormForm() {
   //   const [username, setUsername] = useState('')
   //   const [password, setPassword] = useState('')
 
@@ -8,6 +8,13 @@ function HTML5Form() {
     username: '',
     email: '',
     password: '',
+  })
+
+  // 記錄欄位有錯誤時的訊息
+  const [fieldErrors, setFieldErrors] = useState({
+    username: '',
+    password: '',
+    email: '',
   })
 
   // true = 呈現密碼 / false = 隱藏密碼
@@ -41,10 +48,34 @@ function HTML5Form() {
 
     // 送到伺服器
   }
+  const handleFormInvalid = (e) => {
+    // 阻擋submit預設行為 - 關閉泡泡訊息
+    e.preventDefault()
+    //console.log(e.target.name, e.target.validationMessage)
+
+    setFieldErrors({
+      ...fieldErrors,
+      [e.target.name]: e.target.validationMessage,
+    })
+  }
+
+  // 當使用者回頭修正欄位時，要把表單的錯誤訊息先清空
+  const handleFormChange = (e) => {
+    setFieldErrors({
+      //要把目前正在修改的欄位的錯誤訊息先清空
+      ...fieldErrors,
+      [e.target.name]: '',
+    })
+  }
 
   return (
     <>
-      <form onSubmit={handleFormSubmit} >
+      <form
+        onSubmit={handleFormSubmit}
+        onInvalid={handleFormInvalid}
+        onChange={handleFormChange}
+      >
+        {/* onInvalid 當表單驗證錯誤時觸發 */}
         <label>帳號</label>
         <input
           type="text"
@@ -53,6 +84,7 @@ function HTML5Form() {
           onChange={handleFieldChange}
           required
         />
+        <span>{fieldErrors.username}</span>
         <br />
         <label>信箱</label>
         <input
@@ -62,6 +94,7 @@ function HTML5Form() {
           onChange={handleFieldChange}
           required
         />
+        <span>{fieldErrors.email}</span>
         <br />
         <label>密碼</label>
         <input
@@ -71,6 +104,7 @@ function HTML5Form() {
           onChange={handleFieldChange}
           required
         />
+        <span>{fieldErrors.password}</span>
         <input
           type="checkbox"
           name="show"
@@ -100,4 +134,4 @@ function HTML5Form() {
   )
 }
 
-export default HTML5Form
+export default HTML5HTML5ValidFormForm
