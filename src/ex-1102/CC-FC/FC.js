@@ -22,6 +22,12 @@ function FC() {
       console.log('模擬didUpdate(避開初始值)')
     }
   }, [total])
+  // 模擬 willUnmount
+  useEffect(() => {
+    return () => {
+      console.log('模擬 willUnmount')
+    }
+  }, [])
 
   return (
     <>

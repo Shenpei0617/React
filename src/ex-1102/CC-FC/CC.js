@@ -19,6 +19,9 @@ class CC extends Component {
       this.setState({ name: 'eddy' })
     }
   }
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
+  }
 
   render() {
     console.log('render')
