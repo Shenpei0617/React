@@ -4,8 +4,8 @@ import CC from './CC'
 function Lifecycle() {
   return (
     <>
-      {/* <CC /> */}
-      <FC />
+      <CC />
+      {/* <FC /> */}
     </>
   )
 }

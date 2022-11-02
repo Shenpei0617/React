@@ -9,6 +9,20 @@ function FC() {
   }, [])
   //!!相依性陣列
 
+  // 模擬didMount + didUpdate
+  useEffect(() => {
+    // 當total狀態有改變時，執行這裡的程式碼
+    console.log('模擬didUpdate')
+  }, [total])
+
+  // 模擬didUpdate，用if控制避開初始值
+  useEffect(() => {
+    // 當total狀態有改變時，執行這裡的程式碼
+    if (total !== 0) {
+      console.log('模擬didUpdate(避開初始值)')
+    }
+  }, [total])
+
   return (
     <>
       {console.log('render')}
