@@ -26,6 +26,10 @@ import HTML5ValidForm from '../ex-1102/HTML5HTML5ValidFormForm'
 import Lifecycle from '../ex-1102/CC-FC/Lifecycle'
 import User from '../ex-1102/data/User'
 
+//1103
+import ImageDemo from '../ex-1103/ImageDemo'
+import UserDemo from '../ex-1103/UserDemo/UserDemo'
+
 export const examples = [
   {
     name: '1025計數器',
@@ -121,5 +125,15 @@ export const examples = [
     name: '1102 從伺服器載入資料',
     path: '../ex-1102/data/User',
     component: User,
+  },
+  {
+    name: '1103 圖片使用說明',
+    path: '../ex-1103/ImageDemo',
+    component: ImageDemo,
+  },
+  {
+    name: '1103 從伺服器載入資料(搜尋、分頁功能)',
+    path: '../ex-1103/UserDemo/UserDemo',
+    component: UserDemo,
   },
 ]
