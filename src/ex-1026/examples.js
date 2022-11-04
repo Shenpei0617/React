@@ -17,18 +17,24 @@ import BirthSelect from '../練習題/4.日期下拉選單/ex-1031-BirthSelect'
 import TodoApp from '../ex-1031/TodoApp'
 import TodoApp2 from '../ex-1031/TodoApp2'
 
-//1101
+//1101-------------
 import TodoApp3 from '../ex-1101/TodoApp3'
 import MultipleInput from '../ex-1101/MultipleInput'
 
-//1102
+//1102------------
 import HTML5ValidForm from '../ex-1102/HTML5HTML5ValidFormForm'
 import Lifecycle from '../ex-1102/CC-FC/Lifecycle'
 import User from '../ex-1102/data/User'
 
-//1103
+//1103------------
 import ImageDemo from '../ex-1103/ImageDemo'
 import UserDemo from '../ex-1103/UserDemo/UserDemo'
+
+//1104------------
+import UserPage from '../ex-1104/UserPage/UserPage'
+import BS5Test from '../ex-1104/BS5Test'
+
+
 
 export const examples = [
   {
@@ -132,8 +138,18 @@ export const examples = [
     component: ImageDemo,
   },
   {
-    name: '1103 從伺服器載入資料(搜尋、分頁功能)',
+    name: '1103 從伺服器載入資料(搜尋功能)',
     path: '../ex-1103/UserDemo/UserDemo',
     component: UserDemo,
+  },
+  {
+    name: '1104 從伺服器載入資料(分頁功能)',
+    path: '../ex-1104/UserPage/UserPage',
+    component: UserPage,
+  },
+  {
+    name: '1104 bootStrap 整合',
+    path: '../ex-1104/BS5Test',
+    component: BS5Test,
   },
 ]
